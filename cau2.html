@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> tryRemoveFromArray</title>
+</head>
+<body>
+<p id="before"> </p>
+<p id="result"></p>
+<script>
+    function tryRemoveFromArray(array, elem) {
+        //Dùng vòng lặp for để duyệt mảng
+        let arrTemp = [];
+        for (let i = 0; i < array.length; i++) {
+            //Dùng toán tử delete để xóa phần tử elem tại i nếu tìm thấy elem
+            if (array[i] === elem) {
+                delete array[i] ;
+            }
+        }
+        return array;
+    }
+    let arr = [5,6,3,8,8,9,8,9,8,];
+    document.getElementById('before').innerHTML = ("Mảng trước khi xóa :"+ arr );
+    document.getElementById('result').innerHTML = ("Mảng sau khi xóa :"+ tryRemoveFromArray(arr, 8));
+</script>
+</body>
+</html>
