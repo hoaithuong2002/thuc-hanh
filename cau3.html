@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
 </head>
 <body>
-$END$
+<input type="number" id="num"> Nhập vào số cần kiểm tra
+<button onclick="displayisFibo()">Kiểm Tra</button>
+<p id="before"></p>
+<p id="notif"></p>
+<p id="result" ></p>
+<script>
+    function isFibonacci(number) {
+        let fb0 = 0;
+        let fb1 = 1;
+        let fbTemp = 0;
+        let flag = false;
+        while (fiboTemp <= number) {
+            if (fiboTemp == number) {
+                flag = true;
+                break;
+            } else {
+                fiboTemp = fb0 + fb1;
+                fb0 = fb1;
+                fb1 = fiboTemp;
+            }
+        }
+        return flag;
+    }
+    function displayisFibo() {
+        let a =+ document.getElementById('num').value;
+        let result = isFibonacci(a);
+        document.getElementById('notif').innerHTML = result;
+    }
+</script>
 </body>
 </html>
